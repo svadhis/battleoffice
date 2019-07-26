@@ -1,0 +1,270 @@
+<style type="text/css">
+    .form-error {
+        color: red;
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+    .form-error ul {
+        margin: 0;
+    }
+</style>
+
+<script src="https://www.paypal.com/sdk/js?client-id=AbCefwbuo8M4HcAJX4yo5L1VRAoUhZ9Gy2NADRVbmHGENMfRS12B2xxCjrgvt2k-Y8qSbo91ubJg9C1L&currency=EUR"></script>
+
+
+{# Etape 2 #}
+<div class="card step_2">
+    <div class="card-content">
+        <span class="card-title color_product_primary center-align">Étape 2</span>
+        <p class="h6 center-align">Remplissez ce formulaire</p>
+        <div class="form-wrapper">
+            <div class="input-field">
+                {{ form_label(form.client.firstName, 'Prénom') }}
+                {{ form_widget(form.client.firstName, { attr: {class: 'validate'}}) }}
+                <span class="helper-text" data-error="Merci d'entrer un prénom valide" data-success=""></span>
+                <div class="form-error"></div>
+            </div>
+            <div class="input-field">
+                {{ form_label(form.client.lastName,'Nom')}}
+                {{ form_widget(form.client.lastName, { attr: {class: 'validate'}}) }}
+                <span class="helper-text" data-error="Merci d'entrer un nom valide" data-success=""></span>
+                <div class="form-error"></div>
+            </div>
+            <div class="input-field">
+                {{ form_label(form.client.address1,'Adresse')}}
+                {{ form_widget(form.client.address1, { attr: {class: 'validate'}})}}
+                <span class="helper-text" data-error="Merci d'entrer une adresse valide" data-success=""></span>
+                <div class="form-error"></div>
+            </div>
+            <div class="input-field">
+                {{ form_label(form.client.address2,'Complément adr.')}}
+                {{ form_widget(form.client.address2, { attr: {class: 'validate'}})}}
+                <span class="helper-text" data-error="Merci d'entrer un complément d'adresse valide" data-success=""></span>
+                <div class="form-error"></div>
+            </div>
+            <div class="input-field">
+                {{ form_label(form.client.city,'Ville')}}
+                {{ form_widget(form.client.city, { attr: {class: 'validate'}})}}
+                <span class="helper-text" data-error="Merci d'entrer une ville valide" data-success=""></span>
+                <div class="form-error"></div>
+            </div>
+            <div class="input-field">
+                {{ form_label(form.client.postalCode, 'Code postal')}}
+                {{ form_widget(form.client.postalCode, { attr: {class: 'validate'}})}}
+                <span class="helper-text" data-error="Merci d'entrer un code postal valide" data-success=""></span>
+
+                <div class="form-error"></div>
+            </div>
+            <div class="input-field">
+                {{ form_widget(form.client.country, { attr: {class: 'validate'}})}}
+                {{ form_label(form.client.country, 'Pays')}}
+                <span class="helper-text" data-error="Merci d'entrer une  ville valide" data-success=""></span>
+                <div class="form-error"></div>
+            </div>
+            <div class="input-field">
+                {{ form_label(form.client.phone,'Téléphone')}}
+                {{ form_widget(form.client.phone, {attr: {class: 'validate'}})}}
+                <span class="helper-text" data-error="Merci d'entrer un numéro de téléphone valide" data-success=""></span>
+                <div class="form-error"></div>
+            </div>
+            <div class="input-field">
+                {{ form_label(form.client.email, 'Email')}}
+                {{ form_widget(form.client.email, { attr: {class: 'validate'}})}}
+                <span class="helper-text" data-error="Merci d'entrer un email valide" data-success=""></span>
+                <div class="form-error"></div>
+            </div>
+            <div class="input-field">
+                {{ form_label(form.client.confirmationEmail, 'Confirmation d\'email')}}
+                {{ form_widget(form.client.confirmationEmail, { attr: {class: 'validate'}})}}
+                <span class="helper-text" data-error="Merci d'entrer deux emails identiques" data-success=""></span>
+                <div class="form-error"></div>
+                <div class="form-error"></div>
+            </div>
+        </div>
+    </div>
+    <ul class="collapsible">
+        <li>
+            <div class="collapsible-header show-shipping-address" onclick="toggleForm();">
+                <i class="material-icons">markunread_mailbox</i>Adresse de livraison différente ?</div>
+            <div class="collapsible-body shipping-address">
+                <div class="input-field">
+                    {{ form_label(form.address1, 'Adresse')}}
+                    {{ form_widget(form.address1, { attr: {class: 'validate'}})}}
+                    <span class="helper-text" data-error="Merci d'entrer une adresse valide" data-success=""></span>
+                    <div class="form-error"></div>
+                </div>
+                <div class="input-field">
+                    {{ form_label(form.address2, 'Complément adr')}}
+                    {{ form_widget(form.address2, { attr: {class: 'validate'}})}}
+                    <span class="helper-text" data-error="Merci d'entrer un complément d'adresse valide" data-success=""></span>
+                    <div class="form-error"></div>
+                </div>
+                <div class="input-field">
+                    {{ form_label(form.city, 'Ville')}}
+                    {{ form_widget(form.city, { attr: {class: 'validate'}})}}
+                    <span class="helper-text" data-error="Merci d'entrer une ville valide" data-success=""></span>
+
+                    <div class="form-error"></div>
+                </div>
+                <div class="input-field">
+                    {{ form_label(form.postalCode, 'Code postal')}}
+                    {{ form_widget(form.postalCode, { attr: {class: 'validate'}})}}
+                    <span class="helper-text" data-error="Merci d'entrer un code postal valide" data-success=""></span>
+                </div>
+                <div class="input-field">
+                    {{ form_widget(form.country, { attr: {class: 'validate'}})}}
+                    {{ form_label(form.country, 'Pays')}}
+                    <span class="helper-text" data-error="Merci d'entrer une ville valide" data-success=""></span>
+                    <div class="form-error"></div>
+                </div>
+                <div class="input-field">
+                    {{ form_label(form.phone, 'Téléphone')}}
+                    {{ form_widget(form.phone, { attr: {class: 'validate'}})}}
+                    <span class="helper-text" data-error="Merci d'entrer un numéro de téléphone valide" data-success=""></span>
+
+                    <div class="form-error"></div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>{# Etape 3 #}<div class="card step_3">
+    <div class="card-content">
+        <span class="card-title color_product_primary center-align">Étape 3</span>
+        <p class="h6 center-align">Choisissez un paiement</p>
+        <ul class="collapsible">
+            <li class="active">
+                <div class="collapsible-header">
+                    <i class="fas fa-credit-card"></i>Payer avec la Carte Bancaire</div>
+                <div class="collapsible-body card-form">
+                    <div class="row">
+                        <div class="center-align">
+                            <button class="btn-large btn-block waves-effect waves-light" name="order[payment_method]" type="submit" value="stripe" onclick="return validateForm();">Continuer</button>
+                            <p>J'accepte les
+                                <a href="https://feelwellshop.com/fr/conditions-generales-de-ventes" target="_blank">conditions générales de vente</a>
+                            </p>
+                            <img alt="Stripe protège vos achats" class="responsive-img monetico" src="assets/images/paiement-securise-stripe.jpeg">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header">
+                    <i class="fab fa-cc-paypal"></i>Payer avec Paypal</div>
+                <div class="collapsible-body">
+                    <div class="row">
+                        <div class="center-align">
+                            <div class="center" id="paypal-not-valid"><h5>Merci de completer le formulaire</h5></br></div>
+                            <div class="top-margin hidden" id="paypal-button-container" onclick="checkForm();"></div>
+                            <p>J'accepte les
+                                <a href="https://feelwellshop.com/fr/conditions-generales-de-ventes" target="_blank">conditions générales de vente</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+{% block javascripts %}
+
+<script>
+
+    let payPrice = 0;
+    let products = document.querySelectorAll('section.formulas input');
+
+    // Set Paypal button price on product selection
+    products.forEach(product => {
+        product.addEventListener('click', () => {
+            payPrice = product.dataset.price;
+        })     
+    })
+
+    // Create Paypal button and handle when approved
+    paypal.Buttons({
+        createOrder: function(data, actions) {
+        return actions.order.create({
+            purchase_units: [{
+            amount: {
+                value: payPrice / 100
+            }
+            }]
+        });
+        },
+        onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+            // Handle form submission.
+            var form = document.querySelector("form[name='ordering']");
+
+                var hiddenInput = document.createElement('input');
+                hiddenInput.setAttribute('type', 'hidden');
+                hiddenInput.setAttribute('name', 'order[payment_method]');
+                hiddenInput.setAttribute('value', 'paypal');
+                form.appendChild(hiddenInput);
+
+                // Call your server to save the transaction
+                
+                // return fetch('/paypal-transaction-complete', {
+                //    method: 'post',
+                //    headers: {
+                //        'content-type': 'application/json'
+                //    },
+                //    body: JSON.stringify({
+                //        orderID: data.orderID
+                //    })
+                //});
+
+                // Submit the form
+                form.submit();
+        });
+        }
+    }).render('#paypal-button-container');
+
+   let form = document.querySelector("form[name='ordering']");
+
+   let paypalButton = document.querySelector('#paypal-button-container');
+   let paypalNotValid = document.querySelector('#paypal-not-valid');
+
+   let emailInput = document.querySelector('#ordering_client_email');
+   let confirmationEmailInput = document.querySelector('#ordering_client_confirmationEmail');
+
+    form.addEventListener('input', () => {
+
+        // Verify emails are the same
+       if (confirmationEmailInput.value == emailInput.value) {
+           confirmationEmailInput.setCustomValidity("");
+       }
+       else {
+           confirmationEmailInput.setCustomValidity("Invalid field.");
+       }
+
+        // Display Paypal button when form is valid
+       if (form.checkValidity() == false) {
+            paypalNotValid.classList.contains('hidden') && paypalNotValid.classList.remove('hidden');
+            paypalButton.classList.contains('hidden') || paypalButton.classList.add('hidden');
+       }
+       else if (form.checkValidity() == true) {
+            paypalButton.classList.contains('hidden') && paypalButton.classList.remove('hidden');
+            paypalNotValid.classList.contains('hidden') || paypalNotValid.classList.add('hidden');  
+       }
+   })
+
+    // Check if product is selected, and handle error display
+    function validateForm() {
+        var x = form["order[product]"].value;
+        if (x == "") {
+            document.querySelector('#anchor').innerHTML = `
+                <div class="flash-error">
+                        Veuillez selectionner un article.
+                </div>
+            `;
+            var url = location.href;
+            location.href = "#anchor";
+            history.replaceState(null,null,url);
+            return false;
+        }
+    }
+
+</script>
+
+{% endblock %}

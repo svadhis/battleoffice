@@ -1,0 +1,9 @@
+# config/packages/payment.yaml
+jms_payment_core:
+    encryption:
+        secret: def000004a32779f442ca37c89bbe19493a4ef85be4e59c0e8540895b67d6fb453bd811535b5b5bfebed8c5ff7a63a834469cdaa814d7c15f7a5f540df62633253fe0803
+
+jms_payment_paypal:
+    username: imeian-facilitator@gmail.com
+    password: EIPmkuCeJezF4XQjQKFA8yrpQU0sO8AJTK5c75leO7BzlBxtvAL3Rz8B9dw2GdJIMi3fTg9uFk8gUE9D
+    signature: AbCefwbuo8M4HcAJX4yo5L1VRAoUhZ9Gy2NADRVbmHGENMfRS12B2xxCjrgvt2k-Y8qSbo91ubJg9C1L
